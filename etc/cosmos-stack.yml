@@ -1,11 +1,14 @@
 version: '3.1'
 
 services:
+  # note: linux only! no mac!
   cosmos:
     image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator
+    # # windows:
+    # # https://learn.microsoft.com/en-us/azure/cosmos-db/docker-emulator-windows
+    # mcr.microsoft.com/cosmosdb/windows/azure-cosmos-emulator
     restart: always
     environment:
-      POSTGRES_PASSWORD: postgres
       AZURE_COSMOS_EMULATOR_PARTITION_COUNT: '10'
       AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE: 'false'
       AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE: '127.0.0.1'
