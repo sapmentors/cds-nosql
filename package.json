@@ -1,0 +1,24 @@
+{
+  "name": "cds-nosql",
+  "version": "0.0.1-alpha",
+  "description": "(Cosmos DB) NoSQL adapter for SAPCAP (Node.js)",
+  "author": "",
+  "devDependencies": {
+    "prettier": "*",
+    "eslint": "*",
+    "jest": "*",
+    "chai": "*",
+    "chai-as-promised": "*",
+    "chai-subset": "*",
+    "express": "^4"
+  },
+  "scripts": {
+    "prettier": "npx prettier --write .",
+    "setup": "docker-compose -f pg-stack.yml up -d",
+    "test": "npm run setup && jest --silent",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "npx eslint .",
+    "lint:prettier": "npx prettier --check ."
+  },
+  "license": "Apache-2.0"
+}
