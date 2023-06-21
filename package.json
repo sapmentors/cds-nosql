@@ -3,6 +3,10 @@
   "version": "0.0.1-alpha",
   "description": "(Cosmos DB) NoSQL adapter for SAPCAP (Node.js)",
   "author": "",
+  "dependencies": {
+    "@azure/cosmos": "latest",
+    "@sap/cds": "latest"
+  },
   "devDependencies": {
     "prettier": "*",
     "eslint": "*",
@@ -14,8 +18,10 @@
   },
   "scripts": {
     "prettier": "npx prettier --write .",
-    "setup": "docker-compose -f pg-stack.yml up -d",
-    "test": "npm run setup && jest --silent",
+    "cosmos:local": "docker-compose -f etc/cosmos-stack.yml up",
+    "cosmos:remote": "exit 0",
+    "//test": "needs one of the cosmos:* tasks to run",
+    "test": "jest --silent",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "npx eslint .",
     "lint:prettier": "npx prettier --check ."
