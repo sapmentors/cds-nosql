@@ -5,7 +5,8 @@
   "author": "",
   "dependencies": {
     "@azure/cosmos": "latest",
-    "@sap/cds": "latest"
+    "@sap/cds": "latest",
+    "@cap-js/db-service": "latest"
   },
   "devDependencies": {
     "prettier": "*",
