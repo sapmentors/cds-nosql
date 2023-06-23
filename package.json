@@ -1,31 +1,10 @@
 {
-  "name": "cds-nosql",
-  "version": "0.0.1-alpha",
-  "description": "(Cosmos DB) NoSQL adapter for SAPCAP (Node.js)",
-  "author": "",
-  "dependencies": {
-    "@azure/cosmos": "latest",
-    "@sap/cds": "latest",
-    "@cap-js/db-service": "latest"
-  },
-  "devDependencies": {
-    "prettier": "*",
-    "eslint": "*",
-    "jest": "*",
-    "chai": "*",
-    "chai-as-promised": "*",
-    "chai-subset": "*",
-    "express": "^4"
-  },
-  "scripts": {
-    "prettier": "npx prettier --write .",
-    "cosmos:local": "docker-compose -f etc/cosmos-stack.yml up",
-    "cosmos:remote": "exit 0",
-    "//test": "needs one of the cosmos:* tasks to run",
-    "test": "jest --silent",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "npx eslint .",
-    "lint:prettier": "npx prettier --check ."
-  },
-  "license": "Apache-2.0"
+  "name": "_cds-nosql-monorepo",
+  "version": "0.8.15-doesnt-matter",
+  "description": "monorepo for the hackathon on (Cosmos DB) NoSQL adapter for SAPCAP (Node.js)",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "cosmos-db",
+    "min-sample"
+  ]
 }
