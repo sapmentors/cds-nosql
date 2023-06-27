@@ -8,7 +8,7 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "cosmos-nosql"
+        "kind": "sql"
       }
     }
   }
