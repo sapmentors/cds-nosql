@@ -1,5 +1,5 @@
 {
-  "name": "_cds-nosql-monorepo",
+  "name": "cds-nosql-monorepo",
   "version": "0.8.15-doesnt-matter",
   "description": "monorepo for the hackathon on (Cosmos DB) NoSQL adapter for SAPCAP (Node.js)",
   "license": "Apache-2.0",

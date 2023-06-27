@@ -1,5 +1,5 @@
 {
-  "name": "_cds-nosql_m",
+  "name": "cds-nosql",
   "version": "0.0.1-alpha",
   "description": "(Cosmos DB) NoSQL adapter for SAPCAP (Node.js)",
   "author": "",
