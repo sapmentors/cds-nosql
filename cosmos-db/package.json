@@ -21,8 +21,7 @@
   "scripts": {
     "prettier": "npx prettier --write .",
     "cosmos:local": "docker-compose -f etc/cosmos-stack.yml up",
-    "cosmos:remote": "exit 0",
-    "//test": "needs one of the cosmos:* tasks to run",
+    "cosmos:remote": "echo '🔐 you need to connect programmatically! 👨‍💻' && exit 0",
     "test": "jest --silent",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "npx eslint .",
