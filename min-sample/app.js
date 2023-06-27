@@ -188,20 +188,20 @@ function exit(message) {
   process.stdin.on('data', process.exit.bind(process, 0))
 }
 
-createDatabase()
-  .then(() => readDatabase())
-  .then(() => createContainer())
-  .then(() => readContainer())
-  .then(() => scaleContainer())
-  .then(() => createFamilyItem(config.items.Andersen))
-  .then(() => createFamilyItem(config.items.Wakefield))
-  .then(() => queryContainer())
-  .then(() => replaceFamilyItem(config.items.Andersen))
-  .then(() => queryContainer())
-  .then(() => deleteFamilyItem(config.items.Andersen))
-  .then(() => {
-    exit(`Completed successfully`)
-  })
-  .catch(error => {
-    exit(`Completed with error ${JSON.stringify(error)}`)
-  })
+// createDatabase()
+//   .then(() => readDatabase())
+//   .then(() => createContainer())
+//   .then(() => readContainer())
+//   .then(() => scaleContainer())
+//   .then(() => createFamilyItem(config.items.Andersen))
+//   .then(() => createFamilyItem(config.items.Wakefield))
+//   .then(() => queryContainer())
+//   .then(() => replaceFamilyItem(config.items.Andersen))
+//   .then(() => queryContainer())
+//   .then(() => deleteFamilyItem(config.items.Andersen))
+//   .then(() => {
+//     exit(`Completed successfully`)
+//   })
+//   .catch(error => {
+//     exit(`Completed with error ${JSON.stringify(error)}`)
+//   })
