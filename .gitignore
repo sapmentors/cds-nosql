@@ -131,3 +131,6 @@ dist
 
 # Mac
 .DS_Store
+
+# for now to KISS
+package-lock.json
