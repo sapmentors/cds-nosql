@@ -5,17 +5,18 @@
   "author": "",
   "dependencies": {
     "@azure/cosmos": "latest",
-    "@sap/cds": "latest",
-    "@cap-js/db-service": "latest"
+    "@cap-js/db-service": "latest",
+    "@sap/cds": "latest"
   },
   "devDependencies": {
-    "prettier": "*",
-    "eslint": "*",
-    "jest": "*",
     "chai": "*",
     "chai-as-promised": "*",
     "chai-subset": "*",
-    "express": "^4"
+    "eslint": "*",
+    "express": "^4",
+    "jest": "*",
+    "prettier": "*",
+    "sqlite3": "^5.1.6"
   },
   "scripts": {
     "prettier": "npx prettier --write .",
@@ -27,9 +28,5 @@
     "lint:eslint": "npx eslint .",
     "lint:prettier": "npx prettier --check ."
   },
-  "license": "Apache-2.0",
-  "workspaces": [
-    "cosmos-db",
-    "min-sample"
-  ]
+  "license": "Apache-2.0"
 }
