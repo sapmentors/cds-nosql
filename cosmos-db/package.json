@@ -6,7 +6,7 @@
   "dependencies": {
     "@azure/cosmos": "latest",
     "@cap-js/db-service": "latest",
-    "@sap/cds": "latest"
+    "@sap/cds": ">=7"
   },
   "devDependencies": {
     "chai": "*",
