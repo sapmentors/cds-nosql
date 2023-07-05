@@ -1,20 +1,20 @@
 import { CosmosClient } from '@azure/cosmos'
 import { DatabaseService } from '@sap/cds'
 
-import { env } from 'node:process'
-import * as assert from 'node:assert'
-
-const { COSMOS_CONNECTION_STRING } = env
-
 export class CosmosService extends DatabaseService {
+  options?: {
+    credentials: any
+  }
   init() {
     const result = super.init()
 
-    const connectionString = COSMOS_CONNECTION_STRING
+    const credentials = this.options?.credentials
 
-    assert.default(connectionString, 'Cosmos Db connection string is not provided')
+    credentials.userAgentSuffix = credentials.userAgentSuffix || 'CosmosDB-CAPadapter'
 
-    const client = new CosmosClient(connectionString)
+   
+
+    const client = new CosmosClient(credentials)
 
     // this.on('GET', req => {
     //   return 'Dummy'
