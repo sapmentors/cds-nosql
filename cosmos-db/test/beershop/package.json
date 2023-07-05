@@ -2,14 +2,12 @@
   "name": "beershop",
   "version": "0.0.1",
   "description": "the beershop. what are you going to drink today?",
-  "scripts": {
-    "// note!": "you need credentials for the db in your cds env!"
+  "dependencies": {
+    "cds-nosql": "*"
   },
   "cds": {
     "requires": {
-      "db": {
-        "kind": "sql"
-      }
+      "db": "cosmos"
     }
   }
 }

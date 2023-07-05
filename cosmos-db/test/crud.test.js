@@ -1,10 +1,10 @@
 const cds = require('@sap/cds/lib')
-const { expect } = cds.test(__dirname + '/beershop')
+const { expect, GET } = cds.test(__dirname + '/beershop')
 
 //> this is the goal:
 // const project = require('path').resolve(__dirname, 'beershop')
 // const { GET, POST, PUT, PATH, DELTE, expect, data } = cds.test('serve', '--project', project).verbose()
-//> note that all of the above requires to have 
+//> note that all of the above requires to have
 //> /cosmos-db/test/beershop/package.json > cds.requires.db.kind = "cosmos-nosql"
 
 // so you can do:
@@ -18,7 +18,24 @@ describe('CRUD operations', () => {
         const resolved = await Promise.resolve(42)
         expect(resolved).to.eql(42)
     })
-    it.todo("should read Beers and Breweries")
+    it("should read Beers and Breweries through OData", async ()=>{
+        // Reading Beers
+        const beers = await GET `/odata/v4/beershop/Beers`
+        expect(beers.data.value).to.containSubset([{ name:'Lagerbier Hell' }])
+        // Reading Beers
+        const breweries = await GET `/odata/v4/beershop/Breweries`
+        expect(breweries.data.value).to.containSubset([{ name:'Grüner Bier' }])
+    })
+    it("should read Beers and Breweries through CAP Service APIs", async ()=>{
+        const beershop = await cds.connect.to('BeershopService')
+        // Reading Beers
+        const Beers = await beershop.read('Beers')
+        expect(Beers).to.containSubset([{ name:'Lagerbier Hell' }])
+        // Reading Beers
+        // Reading Breweries
+        const Breweries = await beershop.read('Breweries')
+        expect(Breweries).to.containSubset([{ name:'Grüner Bier' }])
+    })
     it.todo("should create a Beer and add its Brewery")
     it.todo("should change a Beer's master data")
     it.todo("should delete a Beer")
