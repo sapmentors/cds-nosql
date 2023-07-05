@@ -27,5 +27,14 @@
     "lint:eslint": "npx eslint .",
     "lint:prettier": "npx prettier --check ."
   },
+  "cds": {
+    "requires": {
+      "kinds": {
+        "cosmos": {
+          "impl": "cds-nosql/lib/CosmosService"
+        }
+      }
+    }
+  },
   "license": "Apache-2.0"
 }
