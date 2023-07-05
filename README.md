@@ -54,8 +54,6 @@ to
 - [Container Management]( https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/ContainerManagement.js)
 - [AAD auth - only if you don't want to use master keys](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/AADAuth.js)
 
-```
-
 # Cosmos UI for the hackathon databases
 Open cosmos.azure.com (make sure that you are not signed in - there should be a "Signin" button and a link allowing to login via connection string
 
