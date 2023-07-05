@@ -1,0 +1,10 @@
+{
+    "extends": "@tsconfig/node18",
+    "compilerOptions": {
+        "target": "ES2015",
+        "moduleResolution": "Node",
+        "types": [
+            "jest"
+        ]
+    }
+}

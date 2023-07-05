@@ -1,4 +1,3 @@
-//@ts-check
 const CosmosClient = require('@azure/cosmos').CosmosClient
 
 const config = require('./config')
@@ -12,10 +11,10 @@ const containerId = config.container.id
 const partitionKey = { kind: 'Hash', paths: ['/partitionKey'] }
 
 const options = {
-      endpoint: endpoint,
-      key: key,
-      userAgentSuffix: 'CosmosDBJavascriptQuickstart'
-    };
+  endpoint: endpoint,
+  key: key,
+  userAgentSuffix: 'CosmosDBJavascriptQuickstart'
+};
 
 const client = new CosmosClient(options)
 
@@ -71,35 +70,30 @@ async function scaleContainer() {
     .database(databaseId)
     .container(containerId)
     .read();
-  
-  try
-  {
-      const {resources: offers} = await client.offers.readAll().fetchAll();
-  
-      const newRups = 500;
-      for (var offer of offers) {
-        if (containerDefinition._rid !== offer.offerResourceId)
-        {
-            continue;
-        }
-        offer.content.offerThroughput = newRups;
-        const offerToReplace = client.offer(offer.id);
-        await offerToReplace.replace(offer);
-        console.log(`Updated offer to ${newRups} RU/s\n`);
-        break;
+
+  try {
+    const { resources: offers } = await client.offers.readAll().fetchAll();
+
+    const newRups = 500;
+    for (var offer of offers) {
+      if (containerDefinition._rid !== offer.offerResourceId) {
+        continue;
       }
+      offer.content.offerThroughput = newRups;
+      const offerToReplace = client.offer(offer.id);
+      await offerToReplace.replace(offer);
+      console.log(`Updated offer to ${newRups} RU/s\n`);
+      break;
+    }
   }
-  catch(err)
-  {
-      if (err.code == 400)
-      {
-          console.log(`Cannot read container throuthput.\n`);
-          console.log(err.body.message);
-      }
-      else 
-      {
-          throw err;
-      }
+  catch (err) {
+    if (err.code == 400) {
+      console.log(`Cannot read container throuthput.\n`);
+      console.log(err.body.message);
+    }
+    else {
+      throw err;
+    }
   }
 }
 
@@ -188,20 +182,20 @@ function exit(message) {
   process.stdin.on('data', process.exit.bind(process, 0))
 }
 
-// createDatabase()
-//   .then(() => readDatabase())
-//   .then(() => createContainer())
-//   .then(() => readContainer())
-//   .then(() => scaleContainer())
-//   .then(() => createFamilyItem(config.items.Andersen))
-//   .then(() => createFamilyItem(config.items.Wakefield))
-//   .then(() => queryContainer())
-//   .then(() => replaceFamilyItem(config.items.Andersen))
-//   .then(() => queryContainer())
-//   .then(() => deleteFamilyItem(config.items.Andersen))
-//   .then(() => {
-//     exit(`Completed successfully`)
-//   })
-//   .catch(error => {
-//     exit(`Completed with error ${JSON.stringify(error)}`)
-//   })
+createDatabase()
+  .then(() => readDatabase())
+  .then(() => createContainer())
+  .then(() => readContainer())
+  .then(() => scaleContainer())
+  .then(() => createFamilyItem(config.items.Andersen))
+  .then(() => createFamilyItem(config.items.Wakefield))
+  .then(() => queryContainer())
+  .then(() => replaceFamilyItem(config.items.Andersen))
+  .then(() => queryContainer())
+  .then(() => deleteFamilyItem(config.items.Andersen))
+  .then(() => {
+    exit(`Completed successfully`)
+  })
+  .catch(error => {
+    exit(`Completed with error ${JSON.stringify(error)}`)
+  })

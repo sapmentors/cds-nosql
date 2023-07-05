@@ -1,0 +1,15 @@
+{
+    "requires": {
+        "db": {
+            "model": [
+                "@cap-js/beershop"
+            ],
+            "kind": "cosmos"
+        },
+        "kinds": {
+            "cosmos": {
+                "impl": "@cap-js/cosmos-db-plugin"
+            }
+        }
+    }
+}

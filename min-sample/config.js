@@ -1,21 +1,20 @@
 var config = {}
 
-config.endpoint = 'https://hackathon-recap.documents.azure.com:443/'
-config.key = '90NT3CKZPVTGsP3yaa1Khb2ur5rJCUwWZku0MxCK7eC8DQTTzugAmNnsqAHR0QZsDkEgRKBmg2v0ACDbKpvJoQ=='
+config.endpoint = 'https://localhost:8081'
+config.key = 'C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=='
 
 config.database = {
-  id: 'ToDoList'
+  id: 'db'
 }
 
 config.container = {
-  id: 'Items'
+  id: 'items'
 }
 
 config.items = {
   Andersen: {
     id: 'Anderson.1',
     Country: 'USA',
-    partitionKey: 'USA',
     lastName: 'Andersen',
     parents: [
       {
@@ -45,7 +44,6 @@ config.items = {
   },
   Wakefield: {
     id: 'Wakefield.7',
-    partitionKey: 'Italy',
     Country: 'Italy',
     parents: [
       {
