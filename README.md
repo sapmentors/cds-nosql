@@ -55,3 +55,8 @@ to
 - [AAD auth - only if you don't want to use master keys](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/AADAuth.js)
 
 ```
+
+# Cosmos UI for the hackathon databases
+Open cosmos.azure.com (make sure that you are not signed in - there should be a "Signin" button and a link allowing to login via connection string
+
+Use this connection string `AccountEndpoint=https://hackathon-recap.documents.azure.com:443/;AccountKey=90NT3CKZPVTGsP3yaa1Khb2ur5rJCUwWZku0MxCK7eC8DQTTzugAmNnsqAHR0QZsDkEgRKBmg2v0ACDbKpvJoQ==;`
