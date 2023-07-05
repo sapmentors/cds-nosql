@@ -41,3 +41,17 @@ to
   }
 }
 ```
+
+# Cosmos samples
+## Point operations
+[Creating, deleting, upserting, updating, querying documents](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/ItemManagement.js)
+
+## Bulk operations
+[Bulk operations](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/Bulk.js)
+
+## Basics – creating database/container, AAD auth
+- [Database Management](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/DatabaseManagement.js)
+- [Container Management]( https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/ContainerManagement.js)
+- [AAD auth - only if you don't want to use master keys](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/cosmosdb/cosmos/samples/v3/javascript/AADAuth.js)
+
+```
