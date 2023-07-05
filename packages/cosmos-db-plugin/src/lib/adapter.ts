@@ -12,8 +12,6 @@ export class CosmosService extends DatabaseService {
 
     credentials.userAgentSuffix = credentials.userAgentSuffix || 'CosmosDB-CAPadapter'
 
-   
-
     const client = new CosmosClient(credentials)
 
     // this.on('GET', req => {
